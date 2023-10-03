@@ -1,9 +1,12 @@
 import React from 'react';
 import {
-  Typography
+  Typography, 
+  Grid, 
+  Paper
 } from '@mui/material';
+import { Container } from '@mui/system';
+import { styled } from '@mui/material/styles';
 import './userDetail.css';
-
 
 /**
  * Define UserDetail, a React component of project #5
@@ -11,17 +14,56 @@ import './userDetail.css';
 class UserDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      user: window.models.userModel(props.match.params.userId)
+    };
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.match.params.userId !== prevProps.match.params.userId){
+      this.setState({
+        user: window.models.userModel(this.props.match.params.userId)
+      });
+    }
+  }
+  
   render() {
+    const Item = styled(Paper)(({ theme }) => ({
+      backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      ...theme.typography.body2,
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    }));
+
     return (
-      <Typography variant="body1">
-        This should be the UserDetail view of the PhotoShare app. Since
-        it is invoked from React Router the params from the route will be
-        in property match. So this should show details of user:
-        {this.props.match.params.userId}. You can fetch the model for the
-        user from window.models.userModel(userId).
-      </Typography>
+      <div>
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <Item>
+                <Typography variant='h4'>
+                  {this.state.user.first_name + " " + this.state.user.last_name}
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item>
+                <Typography>
+                  Location: {this.state.user.location}
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item>
+                <Typography>
+                    Description: {this.state.user.description}
+                </Typography>
+              </Item>
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
     );
   }
 }
