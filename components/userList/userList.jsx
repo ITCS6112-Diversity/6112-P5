@@ -25,7 +25,7 @@ class UserList extends React.Component {
     let userListItems = (
       this.state.users.map((user) => (
         <div key={user._id}>
-          <ListItem >
+          <ListItem className="user-list-item">
             <Link to={"/users/" + user._id}>{user.first_name + " " + user.last_name}</Link>
           </ListItem>
           <Divider/>
@@ -38,7 +38,7 @@ class UserList extends React.Component {
         <Typography variant="h4">
           Users
         </Typography>
-        <List component="nav">
+        <List component="nav" className="user-list">
           {userListItems}
         </List>
       </div>

@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import { Container } from '@mui/system';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import './userDetail.css';
 
 /**
@@ -58,6 +59,13 @@ class UserDetail extends React.Component {
               <Item>
                 <Typography>
                     Description: {this.state.user.description}
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item>
+                <Typography>
+                  <Link className="user-photos-link" to={"/photos/" + this.state.user._id}>Go to user photos</Link>
                 </Typography>
               </Item>
             </Grid>
