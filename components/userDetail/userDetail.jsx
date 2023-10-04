@@ -48,17 +48,24 @@ class UserDetail extends React.Component {
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Item>
                 <Typography>
                   Location: {this.state.user.location}
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Item>
                 <Typography>
                     Description: {this.state.user.description}
+                </Typography>
+              </Item>
+            </Grid>
+            <Grid item xs={4}>
+              <Item>
+                <Typography>
+                    Occupation: {this.state.user.occupation}
                 </Typography>
               </Item>
             </Grid>
