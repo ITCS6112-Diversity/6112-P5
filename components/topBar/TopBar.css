@@ -6,3 +6,8 @@
 .topbar-toolbar{
   justify-content: space-between;
 }
+
+.topbar-toolbar h5 i {
+  font-size: 1.1rem;
+  color: #ced8ff;
+}

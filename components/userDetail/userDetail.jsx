@@ -32,9 +32,8 @@ class UserDetail extends React.Component {
   }
 
   getUserData() {
-    fetchModel("http://localhost:3000/user/" + this.props.match.params.userId).then((data) => {
-      console.log(data);
-      this.setState({ user: data });
+    fetchModel("http://localhost:3000/user/" + this.props.match.params.userId).then((response) => {
+      this.setState({ user: response.data });
     });
   }
   
@@ -56,35 +55,35 @@ class UserDetail extends React.Component {
               <Grid item xs={12}>
                 <Item>
                   <Typography variant='h4'>
-                    {this.state.user.data.first_name + " " + this.state.user.data.last_name}
+                    {this.state.user.first_name + " " + this.state.user.last_name}
                   </Typography>
                 </Item>
               </Grid>
               <Grid item xs={4}>
                 <Item>
                   <Typography>
-                    Location: {this.state.user.data.location}
+                    Location: {this.state.user.location}
                   </Typography>
                 </Item>
               </Grid>
               <Grid item xs={4}>
                 <Item>
                   <Typography>
-                      Description: {this.state.user.data.description}
+                      Description: {this.state.user.description}
                   </Typography>
                 </Item>
               </Grid>
               <Grid item xs={4}>
                 <Item>
                   <Typography>
-                      Occupation: {this.state.user.data.occupation}
+                      Occupation: {this.state.user.occupation}
                   </Typography>
                 </Item>
               </Grid>
               <Grid item xs={12}>
                 <Item>
                   <Typography>
-                    <Link className="user-photos-link" to={"/photos/" + this.state.user.data._id}>Go to user photos</Link>
+                    <Link className="user-photos-link" to={"/photos/" + this.state.user._id}>Go to user photos</Link>
                   </Typography>
                 </Item>
               </Grid>
