@@ -154,7 +154,7 @@ After successfully implementing the FetchModel function in `lib/fetchModelData.j
 to use the FetchModel function to request the data from the server. There should be no accesses to `window.models` in your code and your app should work without the line in `photo-share.html`:
 
 ```xhtml
-<script src="modelData/photoApp.js"><script>
+<script src="modelData/photoApp.js"></script>
 ```
 
 ## Style
@@ -201,3 +201,14 @@ Your respository should include the following updated files.
 - styles/main.css
 
 [^1]: [Stanford Computer Science](https://cs.stanford.edu)
+
+# Scrum Team
+## Product Owner:
+Anas Ibrahim
+## Scrum Master:
+Patrick Flynn
+## Developers
+- Ryan Bass
+- Ashutosh Zawar
+- Saakshi Patel
+- Shubh Almal
