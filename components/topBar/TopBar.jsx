@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 import fetchModel from '../../lib/fetchModelData';
 
 /**
- * Define TopBar, a React componment of project #5
+ * Define TopBar, a React component of project #5
  */
 class TopBar extends React.Component {
   constructor(props) {
