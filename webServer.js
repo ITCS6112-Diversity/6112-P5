@@ -49,7 +49,7 @@ app.get('/test/:p1', function (request, response) {
 });
 
 /*
- * URL /user/list - Return all the User object.
+ * URL /user/list - Return all the User objects.
  */
 app.get('/user/list', function (request, response) {
   response.status(200).send(models.userListModel());
@@ -73,7 +73,9 @@ app.get('/user/:id', function (request, response) {
 
 /*
  * URL /photosOfUser/:id - Return the Photos for User (id)
- */
+
+*/
+
 app.get('/photosOfUser/:id', function (request, response) {
   var id = request.params.id;
   var photos = models.photoOfUserModel(id);
