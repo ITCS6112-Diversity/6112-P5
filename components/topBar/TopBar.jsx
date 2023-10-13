@@ -62,7 +62,7 @@ class TopBar extends React.Component {
       <AppBar className="topbar-appBar" position="absolute">
         <Toolbar className="topbar-toolbar">
           <Typography variant="h5" color="inherit">
-            ITCS 6112 Team Diversity&apos;s Photo App &nbsp;
+            ITCS-6112 Team Diversity&apos;s Photo Sharing App &nbsp;
             <i>Version: {this.state.version && (this.state.version.__v)}</i> 
           </Typography>
           <Typography variant="h5">
