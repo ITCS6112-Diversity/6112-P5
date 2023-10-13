@@ -13,7 +13,7 @@
 
 var express = require('express');
 
-var portno = 3000;   // Port number to use
+var portno = 3000;   // We use this Port number which is 3000
 
 var app = express();
 
