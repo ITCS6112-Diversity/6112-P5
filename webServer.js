@@ -1,7 +1,7 @@
 'use strict';
 
 /*
- * A simple Node.js program for exporting the current working directory via a webserver listing
+ * This is a simple Node.js program for exporting the current working directory via a webserver listing
  * on a hard code (see portno below) port. To start the webserver run the command:
  *    node webServer.js
  *
